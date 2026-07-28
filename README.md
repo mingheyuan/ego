@@ -1,37 +1,37 @@
 # ego
 
-`ego` is a small Go learning project for reimplementing selected standard-library concepts from scratch. The code is intentionally minimal and is meant to make package APIs and behavior easy to inspect.
+`ego` 是一个 Go 学习项目，用于从零实现部分标准库概念。代码保持简洁，便于观察包 API 和核心行为。
 
-## Current Packages
+## 当前包
 
 ### `src/errors`
 
-Contains a minimal error implementation:
+包含一个最小化的错误实现：
 
-- `New(text string) error` creates an error value.
-- The private `errorString` type implements Go's built-in `error` interface.
+- `New(text string) error` 创建错误值。
+- 私有类型 `errorString` 实现 Go 内置的 `error` 接口。
 
 ### `src/context`
 
-This package is currently a placeholder. Context behavior has not been implemented yet.
+当前仍是占位包，尚未实现 Context 行为。
 
-## Requirements
+## 环境要求
 
-- Go 1.25.1 or newer, matching `go.mod`.
+- Go 1.25.1 或更高版本，以 `go.mod` 为准。
 
-## Test
+## 测试
 
-Run the implemented package tests from the repository root:
+运行当前已经实现的包测试：
 
 ```bash
 go test ./src/errors
 ```
 
-The full `go test ./...` command will fail until `src/context/context.go` contains a Go package declaration and implementation.
+在 `src/context/context.go` 增加有效的 Go 包声明和实现前，完整的 `go test ./...` 会失败。
 
-## Example
+## 使用示例
 
-The module path is `ego`, so the custom errors package can be imported as follows:
+模块路径是 `ego`，自定义 errors 包可以这样导入：
 
 ```go
 package main
@@ -47,12 +47,12 @@ func main() {
 }
 ```
 
-## Roadmap
+## 后续计划
 
-- Expand the custom `errors` package with wrapping and inspection helpers.
-- Implement cancellation, deadlines, and value propagation in `src/context`.
-- Add behavior-focused tests and examples for each package.
+- 为自定义 `errors` 包增加包装和错误检查能力。
+- 在 `src/context` 中实现取消、截止时间和值传递。
+- 为每个包增加以行为为中心的测试和示例。
 
-## License
+## 许可证
 
-No license has been declared yet.
+仓库当前没有声明许可证。
